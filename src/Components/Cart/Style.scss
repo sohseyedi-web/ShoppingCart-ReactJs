@@ -1,0 +1,110 @@
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.cart {
+    text-align: right;
+    position: fixed;
+    top: 30vh;
+    left: 5%;
+    width: 90%;
+    background-color: #F9F3DF;
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+    animation: slide-down 300ms ease-out forwards;
+
+
+    &-list {
+        list-style: none;
+        color: #082032;
+
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #082032;
+            padding: 1rem 0;
+            margin: 1rem 0;
+
+            h3 {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            &-box {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            button {
+                margin: 0 1rem;
+                width: 3rem;
+                border-radius: .5rem;
+                background-color: #082032;
+                color: #e0e0e0;
+                border: none;
+                text-align: center;
+                font-size: 1.3rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-total {
+        padding: .3rem;
+
+        &__amount {
+            font-size: 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        &__price {
+            font-size: 1.2rem;
+        }
+    }
+
+    &-button {
+        margin-top: 1rem;
+
+        button {
+            margin: 0 1rem;
+            border-radius: .5rem;
+            background-color: #082032;
+            color: #e0e0e0;
+            border: none;
+            text-align: center;
+            font-size: 1.1rem;
+            padding: .5rem 1rem;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .cart {
+        width: 40rem;
+        left: calc(50% - 20rem);
+    }
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
